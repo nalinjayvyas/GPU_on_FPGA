@@ -1,0 +1,11 @@
+PRGRM 1 : This outputs multiple lines that will change brightness based on button presses.
+This iteration did not include the y coord from the vga.
+//                       opcode_dest_src1_src2
+        8'b0000_0000 :  temp = 16'b0111_0010_0000_0010 ;// This instr does LDI v2,2 (Loads the shift amnt)
+        8'b0000_0001 :  temp = 16'b0001_0001_1110_1111 ;// This instr does ADD v1,v14,v15 (Combines Lane ID with Time)
+        8'b0000_0010 :  temp = 16'b0001_0001_0001_1100 ;// This instr does ADD v1,v1,v12 (Takes the button value also from v12)
+        8'b0000_0011 :  temp = 16'b0100_0001_0001_0010 ;// This instr does SHL v1,v1,v2 ( Shifts v1 by 2 to make it visible)
+        8'b0000_0100 :  temp = 16'b1111_0000_0000_0001 ;// This instr does JMP address 1 ( Loop)
+
+PRGRM 2 : This prgrm introduces the i_y input to the design that allows for dyanamic chnages in the
+y coord. 
