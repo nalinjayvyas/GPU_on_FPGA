@@ -1,0 +1,1 @@
+This version includes programmability and output obtained is like 4 volume bars of red and green colors.
